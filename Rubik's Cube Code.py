@@ -30,25 +30,27 @@ class Cubie:
 
 class RubiksCube:
 
-    rotations = {
-        'R': right,
-        'R\'': anti_right,
-        'F': front,
-        'F\'': anti_front,
-        'L': left,
-        'L\'': anti_left,
-        'B': back,
-        'B\'': anti_back,
-        'U': up,
-        'U\'': anti_up,
-        'D': down,
-        'D\'': anti_down
-    }
+    # This isn't working and I have no goddamn idea why
+
+    # rotations = {
+    #     'R': right,
+    #     'R\'': anti_right,
+    #     'F': front,
+    #     'F\'': anti_front,
+    #     'L': left,
+    #     'L\'': anti_left,
+    #     'B': back,
+    #     'B\'': anti_back,
+    #     'U': up,
+    #     'U\'': anti_up,
+    #     'D': down,
+    #     'D\'': anti_down
+    # }
 
     def __init__(self):
 
         self.components = []
-        self.frame = []
+        self.frame = [[[' ' for i in range(3)] for j in range(3)] for k in range(3)]
 
         for i in range(-1,2):
             for j in range(-1,2):
