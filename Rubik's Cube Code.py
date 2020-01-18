@@ -286,3 +286,6 @@ class RubiksCube:
             for i in range(3):
                 print(self.frame[i][2][2 - i].colors['Front'][0], end = ' ')
             print(' - - - ')
+
+                
+
