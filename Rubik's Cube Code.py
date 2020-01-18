@@ -250,3 +250,42 @@ class RubiksCube:
 
                 self.components[i] = other
                 self.frame[other.x+1][other.y+1][other.z+1] = other
+
+
+    def printCube(self):
+
+        for j in range(3):
+
+            print('- - -  - - -  ', end = '')
+            for i in range(3): 
+                print(self.frame[i][0][j].colors['Back'][0], end = ' ')
+            print(' - - - ')
+
+
+        for j in range(3):
+            
+            for i in range(3):
+                print(self.frame[2 - i][j][0].colors['Down'][0], end = ' ')
+            print(end = ' ')
+
+            for i in range(3):
+                print(self.frame[0][j][i].colors['Left'][0], end = ' ')
+            print(end = ' ')
+
+            for i in range(3): 
+                print(self.frame[i][j][2].colors['Up'][0], end = ' ')
+            print(end = ' ')
+
+            for i in range(3):
+                print(self.frame[2][j][2 - i].colors['Right'][0], end = ' ')
+            print()
+
+        for j in range(3):
+            
+            print('- - -  - - - ', end = ' ')
+            for i in range(3):
+                print(self.frame[i][2][2 - i].colors['Front'][0], end = ' ')
+            print(' - - - ')
+
+                
+
