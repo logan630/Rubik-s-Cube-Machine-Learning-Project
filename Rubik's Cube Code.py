@@ -30,6 +30,21 @@ class Cubie:
 #what up dawg
 class RubiksCube:
 
+    rotations = {
+        'R': right,
+        'R\'': anti_right,
+        'F': front,
+        'F\'': anti_front,
+        'L': left,
+        'L\'': anti_left,
+        'B': back,
+        'B\'': anti_back,
+        'U': up,
+        'U\'': anti_up,
+        'D': down,
+        'D\'': anti_down
+    }
+
     def __init__(self):
 
         self.components = []
