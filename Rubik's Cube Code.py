@@ -108,10 +108,10 @@ class RubiksCube:
             if self.components[i].y == 1:
 
                 other = Cubie(self.components[i].x,self.components[i].y,self.components[i].z)
-                other.color['Left'] = self.components[i].colors['Up']
-                other.color['Up'] = self.components[i].colors['Right']
-                other.color['Right'] = self.components[i].colors['Down']
-                other.color['Down'] = self.components[i].colors['Left']
+                other.colors['Left'] = self.components[i].colors['Up']
+                other.colors['Up'] = self.components[i].colors['Right']
+                other.colors['Right'] = self.components[i].colors['Down']
+                other.colors['Down'] = self.components[i].colors['Left']
 
                 self.components[i] = other
 
@@ -153,10 +153,10 @@ class RubiksCube:
             if self.components[i].y == -1:
 
                 other = Cubie(self.components[i].x,self.components[i].y,self.components[i].z)
-                other.color['Left'] = self.components[i].colors['Up']
-                other.color['Up'] = self.components[i].colors['Right']
-                other.color['Right'] = self.components[i].colors['Down']
-                other.color['Down'] = self.components[i].colors['Left']
+                other.colors['Left'] = self.components[i].colors['Up']
+                other.colors['Up'] = self.components[i].colors['Right']
+                other.colors['Right'] = self.components[i].colors['Down']
+                other.colors['Down'] = self.components[i].colors['Left']
 
                 self.components[i] = other
 
