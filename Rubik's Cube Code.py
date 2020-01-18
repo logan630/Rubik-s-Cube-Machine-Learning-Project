@@ -48,12 +48,14 @@ class RubiksCube:
     def __init__(self):
 
         self.components = []
+        self.frame = []
 
         for i in range(-1,2):
             for j in range(-1,2):
                 for k in range(-1,2):
 
                     self.components.append(Cubie(i,j,k))    
+                    self.frame[i+1][j+1][k+1] = Cubie(i,j,k)
 
 
     def right(self):
@@ -69,6 +71,7 @@ class RubiksCube:
                 other.colors['Front'] = self.components[i].colors['Down']
 
                 self.components[i] = other
+                self.frame[other.x+1][other.y+1][other.z+1] = other
     
 
     def anti_right(self):
@@ -84,6 +87,7 @@ class RubiksCube:
                 other.colors['Down'] = self.components[i].colors['Front']
 
                 self.components[i] = other
+                self.frame[other.x+1][other.y+1][other.z+1] = other
 
     
     def front(self):
@@ -99,6 +103,7 @@ class RubiksCube:
                 other.colors['Left'] = self.components[i].colors['Down']
 
                 self.components[i] = other
+                self.frame[other.x+1][other.y+1][other.z+1] = other
 
     
     def anti_front(self):
@@ -114,6 +119,7 @@ class RubiksCube:
                 other.colors['Down'] = self.components[i].colors['Left']
 
                 self.components[i] = other
+                self.frame[other.x+1][other.y+1][other.z+1] = other
 
     
     def left(self):
@@ -129,6 +135,7 @@ class RubiksCube:
                 other.colors['Down'] = self.components[i].colors['Front']
 
                 self.components[i] = other
+                self.frame[other.x+1][other.y+1][other.z+1] = other
 
     
     def anti_left(self):
@@ -144,6 +151,7 @@ class RubiksCube:
                 other.colors['Front'] = self.components[i].colors['Down']
 
                 self.components[i] = other
+                self.frame[other.x+1][other.y+1][other.z+1] = other
 
 
     def back(self):
@@ -159,6 +167,7 @@ class RubiksCube:
                 other.colors['Down'] = self.components[i].colors['Left']
 
                 self.components[i] = other
+                self.frame[other.x+1][other.y+1][other.z+1] = other
 
     
     def anti_back(self):
@@ -174,6 +183,7 @@ class RubiksCube:
                 other.colors['Left'] = self.components[i].colors['Down']
 
                 self.components[i] = other
+                self.frame[other.x+1][other.y+1][other.z+1] = other
 
 
     def up(self):
@@ -189,6 +199,7 @@ class RubiksCube:
                 other.colors['Right'] = self.components[i].colors['Back']
 
                 self.components[i] = other
+                self.frame[other.x+1][other.y+1][other.z+1] = other
 
     
     def anti_up(self):
@@ -204,6 +215,7 @@ class RubiksCube:
                 other.colors['Back'] = self.components[i].colors['Right']
 
                 self.components[i] = other
+                self.frame[other.x+1][other.y+1][other.z+1] = other
 
     
     def down(self):
@@ -219,6 +231,7 @@ class RubiksCube:
                 other.colors['Back'] = self.components[i].colors['Right']
 
                 self.components[i] = other
+                self.frame[other.x+1][other.y+1][other.z+1] = other
 
     
     def anti_down(self):
@@ -234,3 +247,4 @@ class RubiksCube:
                 other.colors['Right'] = self.components[i].colors['Back']
 
                 self.components[i] = other
+                self.frame[other.x+1][other.y+1][other.z+1] = other
