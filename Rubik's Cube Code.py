@@ -27,7 +27,7 @@ class Cubie:
 
         return correct_x and correct_y and correct_z
 
-#what up dawg
+
 class RubiksCube:
 
     rotations = {
@@ -55,16 +55,182 @@ class RubiksCube:
 
                     self.components.append(Cubie(i,j,k))    
 
+
     def right(self):
 
-        for cubie in self.components:
+        for i in range(len(self.components)):
 
-            if cubie.x == 1:
+            if self.components[i].x == 1:
 
-                other = Cubie(cubie.x,cubie.y,cubie.z)
-                other.colors['Up'] = cubie.colors['Front']
-                other.colors['Back'] = cubie.colors['Up']
-                other.colors['Down'] = cubie.colors['Back']
-                other.colors['Front'] = cubie.colors['Down']
+                other = Cubie(self.components[i].x,self.components[i].y,self.components[i].z)
+                other.colors['Up'] = self.components[i].colors['Front']
+                other.colors['Back'] = self.components[i].colors['Up']
+                other.colors['Down'] = self.components[i].colors['Back']
+                other.colors['Front'] = self.components[i].colors['Down']
 
-                cubie = other
+                self.components[i] = other
+    
+
+    def anti_right(self):
+
+        for i in range(len(self.components)):
+
+            if self.components[i].x == 1:
+
+                other = Cubie(self.components[i].x,self.components[i].y,self.components[i].z)
+                other.colors['Front'] = self.components[i].colors['Up']
+                other.colors['Up'] = self.components[i].colors['Back']
+                other.colors['Back'] = self.components[i].colors['Down']
+                other.colors['Down'] = self.components[i].colors['Front']
+
+                self.components[i] = other
+
+    
+    def front(self):
+
+        for i in range(len(self.components)):
+
+            if self.components[i].y == 1:
+
+                other = Cubie(self.components[i].x,self.components[i].y,self.components[i].z)
+                other.colors['Up'] = self.components[i].colors['Left']
+                other.colors['Right'] = self.components[i].colors['Up']
+                other.colors['Down'] = self.components[i].colors['Right']
+                other.colors['Left'] = self.components[i].colors['Down']
+
+                self.components[i] = other
+
+    
+    def anti_front(self):
+
+        for i in range(len(self.components)):
+
+            if self.components[i].y == 1:
+
+                other = Cubie(self.components[i].x,self.components[i].y,self.components[i].z)
+                other.color['Left'] = self.components[i].colors['Up']
+                other.color['Up'] = self.components[i].colors['Right']
+                other.color['Right'] = self.components[i].colors['Down']
+                other.color['Down'] = self.components[i].colors['Left']
+
+                self.components[i] = other
+
+    
+    def left(self):
+
+        for i in range(len(self.components)):
+
+            if self.components[i].x == -1:
+
+                other = Cubie(self.components[i].x,self.components[i].y,self.components[i].z)
+                other.colors['Front'] = self.components[i].colors['Up']
+                other.colors['Up'] = self.components[i].colors['Back']
+                other.colors['Back'] = self.components[i].colors['Down']
+                other.colors['Down'] = self.components[i].colors['Front']
+
+                self.components[i] = other
+
+    
+    def anti_left(self):
+
+        for i in range(len(self.components)):
+
+            if self.components[i].x == -1:
+
+                other = Cubie(self.components[i].x,self.components[i].y,self.components[i].z)
+                other.colors['Up'] = self.components[i].colors['Front']
+                other.colors['Back'] = self.components[i].colors['Up']
+                other.colors['Down'] = self.components[i].colors['Back']
+                other.colors['Front'] = self.components[i].colors['Down']
+
+                self.components[i] = other
+
+
+    def back(self):
+
+        for i in range(len(self.components)):
+
+            if self.components[i].y == -1:
+
+                other = Cubie(self.components[i].x,self.components[i].y,self.components[i].z)
+                other.color['Left'] = self.components[i].colors['Up']
+                other.color['Up'] = self.components[i].colors['Right']
+                other.color['Right'] = self.components[i].colors['Down']
+                other.color['Down'] = self.components[i].colors['Left']
+
+                self.components[i] = other
+
+    
+    def anti_back(self):
+
+        for i in range(len(self.components)):
+
+            if self.components[i].y == -1:
+
+                other = Cubie(self.components[i].x,self.components[i].y,self.components[i].z)
+                other.colors['Up'] = self.components[i].colors['Left']
+                other.colors['Right'] = self.components[i].colors['Up']
+                other.colors['Down'] = self.components[i].colors['Right']
+                other.colors['Left'] = self.components[i].colors['Down']
+
+                self.components[i] = other
+
+
+    def up(self):
+
+        for i in range(len(self.components)):
+
+            if self.components[i].z == 1:
+
+                other = Cubie(self.components[i].x,self.components[i].y,self.components[i].z)
+                other.colors['Front'] = self.components[i].colors['Right']
+                other.colors['Left'] = self.components[i].colors['Front']
+                other.colors['Back'] = self.components[i].colors['Left']
+                other.colors['Right'] = self.components[i].colors['Back']
+
+                self.components[i] = other
+
+    
+    def anti_up(self):
+
+        for i in range(len(self.components)):
+
+            if self.components[i].z == 1:
+
+                other = Cubie(self.components[i].x,self.components[i].y,self.components[i].z)
+                other.colors['Right'] = self.components[i].colors['Front']
+                other.colors['Front'] = self.components[i].colors['Left']
+                other.colors['Left'] = self.components[i].colors['Back']
+                other.colors['Back'] = self.components[i].colors['Right']
+
+                self.components[i] = other
+
+    
+    def down(self):
+
+        for i in range(len(self.components)):
+
+            if self.components[i].z == -1:
+
+                other = Cubie(self.components[i].x,self.components[i].y,self.components[i].z)
+                other.colors['Right'] = self.components[i].colors['Front']
+                other.colors['Front'] = self.components[i].colors['Left']
+                other.colors['Left'] = self.components[i].colors['Back']
+                other.colors['Back'] = self.components[i].colors['Right']
+
+                self.components[i] = other
+
+    
+    def anti_down(self):
+
+        for i in range(len(self.components)):
+
+            if self.components[i].z == -1:
+
+                other = Cubie(self.components[i].x,self.components[i].y,self.components[i].z)
+                other.colors['Front'] = self.components[i].colors['Right']
+                other.colors['Left'] = self.components[i].colors['Front']
+                other.colors['Back'] = self.components[i].colors['Left']
+                other.colors['Right'] = self.components[i].colors['Back']
+
+                self.components[i] = other
