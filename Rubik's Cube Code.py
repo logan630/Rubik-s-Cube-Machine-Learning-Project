@@ -61,10 +61,10 @@ class RubiksCube:
 
             if cubie.x == 1:
 
-                other = Cubie(self.x,self.y,self.z)
-                other.components['Up'] = self.components['Front']
-                other.components['Back'] = self.components['Up']
-                other.components['Down'] = self.components['Back']
-                other.components['Front'] = self.components['Down']
+                other = Cubie(cubie.x,cubie.y,cubie.z)
+                other.colors['Up'] = cubie.colors['Front']
+                other.colors['Back'] = cubie.colors['Up']
+                other.colors['Down'] = cubie.colors['Back']
+                other.colors['Front'] = cubie.colors['Down']
 
-                self.components = other.components
+                cubie = other
