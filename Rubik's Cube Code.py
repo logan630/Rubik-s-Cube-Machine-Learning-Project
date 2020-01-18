@@ -27,7 +27,7 @@ class Cubie:
 
         return correct_x and correct_y and correct_z
 
-
+#what up dawg
 class RubiksCube:
 
     def __init__(self):
