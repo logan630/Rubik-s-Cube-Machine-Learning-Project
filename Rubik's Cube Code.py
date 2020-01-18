@@ -54,3 +54,17 @@ class RubiksCube:
                 for k in range(-1,2):
 
                     self.components.append(Cubie(i,j,k))    
+
+    def right(self):
+
+        for cubie in self.components:
+
+            if cubie.x == 1:
+
+                other = Cubie(self.x,self.y,self.z)
+                other.components['Up'] = self.components['Front']
+                other.components['Back'] = self.components['Up']
+                other.components['Down'] = self.components['Back']
+                other.components['Front'] = self.components['Down']
+
+                self.components = other.components
